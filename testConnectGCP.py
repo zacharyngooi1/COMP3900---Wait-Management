@@ -43,7 +43,6 @@ val1 = ("unsw", "unsw@unsw.com", "unsw")
 insert_user_to_users_Table(query,val,db)
 insert_user_to_users_Table(query1,val1,db)
 
-mycursor.execute("set global max_allowed_packet=67108864")
 
 mycursor.close()
 db.close()
