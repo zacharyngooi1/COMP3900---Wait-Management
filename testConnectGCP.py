@@ -15,7 +15,7 @@ def create_server_connection(host_name, user_name, user_password, database_name)
             database = database_name
         )
         print("connection created")
-    except error as err:
+    except mysql.connector.error as err:
         print(f"error creating connection ---------'{err}'")
     
     return connection
@@ -43,7 +43,7 @@ val1 = ("unsw", "unsw@unsw.com", "unsw")
 insert_user_to_users_Table(query,val,db)
 insert_user_to_users_Table(query1,val1,db)
 
-#mycursor.execute("drop table users")
+mycursor.execute("set global max_allowed_packet=67108864")
 
 mycursor.close()
 db.close()
