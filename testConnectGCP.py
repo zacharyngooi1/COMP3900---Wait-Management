@@ -15,8 +15,8 @@ def create_server_connection(host_name, user_name, user_password, database_name)
             database = database_name
         )
         print("connection created")
-    except mysql.connector.error as err:
-        print(f"error creating connection ---------'{err}'")
+    except mysql.connector.Error as err:
+        print(err)
     
     return connection
 
